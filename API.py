@@ -3,10 +3,10 @@ from model import classifier
 
 app = Flask(__name__)
 
-@app.route("/classify/<uinput>")
-def classify(uinput):
+@app.route("/classify/<user_input>")
+def classify(user_input):
     model=classifier()
-    return model.model_result()
+    return model.model_result(user_input)
 
 
 
