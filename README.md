@@ -26,3 +26,15 @@ In this project, we leverage the power of modern NLP technology to create a dyna
 
 5. **Online Hosting:**
    - The web application is hosted online, ensuring accessibility to users from anywhere with an internet connection.
+
+## Installation
+
+**Pre-requisites**
+   > python3 
+   > pip
+
+**Clone the repo**
+git clone https://github.com/iam-VK/Sematic-analysis-and-corrector-for-negative-sentence.git
+
+**Run the setup script**
+sudo ./setup.sh

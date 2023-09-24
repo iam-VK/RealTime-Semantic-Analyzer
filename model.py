@@ -21,22 +21,10 @@ class classifier:
     
     def model_result(self,sentence):
         prediction=self.runmodel(sentence)
-        # result_dict={
-        #     "Anger":prediction[0][0].item(),
-        #     "Disgust":prediction[0][1].item(),
-        #     "Fear":prediction[0][2].item(),
-        #     "Joy":prediction[0][3].item(),
-        #     "Neutral":prediction[0][4].item(),
-        #     "Sadness":prediction[0][5].item(),
-        #     "Surprise":prediction[0][6].item()
-        # }
-
-        # result_dict = sorted(result_dict.items(), key=lambda x:x[1],reverse=True)
-        # result_json=json.dumps(result_dict,indent=2)
 
         id2label = config.id2label
         scores = prediction[0].tolist()
-        labled_prediction = {label: score for label, score in zip(id2label.values(), scores)}
+        labled_prediction = {label: score*100 for label, score in zip(id2label.values(), scores)}
 
         result_dict = sorted(labled_prediction.items(), key=lambda x:x[1],reverse=True)
         result_json=json.dumps(result_dict,indent=2)
