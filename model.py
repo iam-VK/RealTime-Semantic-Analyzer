@@ -33,4 +33,12 @@ class classifier:
 
         # result_dict = sorted(result_dict.items(), key=lambda x:x[1],reverse=True)
         # result_json=json.dumps(result_dict,indent=2)
-        return str(prediction)
+
+        id2label = config.id2label
+        scores = prediction[0].tolist()
+        labled_prediction = {label: score for label, score in zip(id2label.values(), scores)}
+
+        result_dict = sorted(labled_prediction.items(), key=lambda x:x[1],reverse=True)
+        result_json=json.dumps(result_dict,indent=2)
+
+        return result_json
