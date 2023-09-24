@@ -1,0 +1,43 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HTML API Request Example</title>
+</head>
+<body>
+    <h1>Semantic Analysis</h1>
+    <form id="apiForm">
+        <label for="inputText">Enter Text:</label>
+        <input type="text" id="inputText" required>
+        <button type="submit">Submit</button>
+    </form>
+    <div id="response" style="display: none;">
+        <h2>Response:</h2>
+        <p id="responseText"></p>
+    </div>
+
+    <script>
+        document.getElementById("apiForm").addEventListener("submit", async function (e) {
+            e.preventDefault();
+            const inputText = document.getElementById("inputText").value;
+            const responseTextElement = document.getElementById("responseText");
+            const apiUrl = `http://localhost:5000/classify/${encodeURIComponent(inputText)}`;
+
+            try {
+                const response = await fetch(apiUrl);
+
+                if (response.ok) {
+                    const data = await response.text();
+                    responseTextElement.textContent = data;
+                } else {
+                    responseTextElement.textContent = 'Error in API request';
+                }
+            } catch (error) {
+                console.error('Error:', error);
+                responseTextElement.textContent = 'Error in API request';
+            }
+            document.getElementById("response").style.display = "block";
+        });
+    </script>
+</body>
+</html>
