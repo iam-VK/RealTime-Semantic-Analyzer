@@ -3,13 +3,9 @@ from torch import nn
 import json
 
 model_name = "roberta-base-go_emotions"
-#"SamLowe/roberta-base-go_emotions"
-#"j-hartmann/emotion-english-distilroberta-base"
-#"cardiffnlp/twitter-roberta-base-sentiment"
 ptmodel = AutoModelForSequenceClassification.from_pretrained(model_name)
 tokenizer = AutoTokenizer.from_pretrained(model_name)
 config = AutoConfig.from_pretrained(model_name)
-#ptmodel.save_pretrained("./local_model")
 
 class classifier:
     def runmodel(self,sentence):

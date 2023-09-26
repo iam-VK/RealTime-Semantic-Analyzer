@@ -30,11 +30,32 @@ In this project, we leverage the power of modern NLP technology to create a dyna
 ## Installation
 
 **Pre-requisites**
-   > python3 
-   > pip
+   > - python3 
+   > - pip
+   > - python venv (virtual environment support)
 
 **Clone the repo**
+
+````bash
 git clone https://github.com/iam-VK/Sematic-analysis-and-corrector-for-negative-sentence.git
+cd Sematic-analysis-and-corrector-for-negative-sentence
+````
+
+**Download Dependencies and libraries**
+```bash
+sudo ./setup.sh 
+```
+>This process will take time to complete and requires good internet connectivity
 
 **Run the setup script**
-sudo ./setup.sh
+```bash
+sudo ./run.sh 
+```
+**Front-end Web page**
+
+The Front-end is not hosted currently so as of now the html file has to be manually be opened from the path
+````
+ /frontend/index.html 
+````
+
+using browser.
