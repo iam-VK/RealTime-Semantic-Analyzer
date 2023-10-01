@@ -1,0 +1,10 @@
+.progress_box {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 5px;
+}
+
+.bar {
+    padding: 10px;
+}
