@@ -53,9 +53,7 @@ sudo ./run.sh
 ```
 **Front-end Web page**
 
-The Front-end is not hosted currently so as of now the html file has to be manually be opened from the path
+The Front-end is not hosted currently so as of now the html file has to be manually be opened from the path using browser.
 ````
  /frontend/index.html 
 ````
-
-using browser.

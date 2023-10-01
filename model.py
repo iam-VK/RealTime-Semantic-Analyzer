@@ -1,6 +1,7 @@
 from transformers import AutoTokenizer, AutoModelForSequenceClassification, AutoConfig
 from torch import nn
 import json
+import collections
 
 model_name = "roberta-base-go_emotions"
 ptmodel = AutoModelForSequenceClassification.from_pretrained(model_name)
@@ -20,9 +21,11 @@ class classifier:
 
         id2label = config.id2label
         scores = prediction[0].tolist()
-        labled_prediction = {label: score*100 for label, score in zip(id2label.values(), scores)}
+        labled_prediction = {label: round(score*100) for label, score in zip(id2label.values(), scores)}
 
         result_dict = sorted(labled_prediction.items(), key=lambda x:x[1],reverse=True)
-        result_json=json.dumps(result_dict,indent=2)
+        ordered_dict = collections.OrderedDict(result_dict)
 
+        result_json=json.dumps(ordered_dict,indent=2)
+ 
         return result_json
