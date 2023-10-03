@@ -23,7 +23,7 @@ function Body()
         />
       </div>
       <br />
-      <ProgressBar inputValue={inputValue}  />
+      <ProgressBar inputValue={inputValue} />
     </>
   )
 }
@@ -64,7 +64,8 @@ const TextareaAutosize = styled(BaseTextareaAutosize)(
   color: ${theme.palette.mode === 'dark' ? grey[300] : "#F9F6EE"};
   background: ${theme.palette.mode === 'dark' ? grey[900] : '#010203'};
   border: 1px solid ${theme.palette.mode === 'dark' ? grey[700] : grey[200]};
-  box-shadow: 0px 2px 24px ${theme.palette.mode === 'dark' ? "#ffff" : "#ffff"};
+  box-shadow: 0px 2px 24px ${theme.palette.mode === 'dark' ? "#010203" : "#010203"};
+  transition: box-shadow 0.2s;
 
   &:hover {
     border-color: ${blue[400]};
@@ -73,7 +74,7 @@ const TextareaAutosize = styled(BaseTextareaAutosize)(
   &:focus {
     color: ${"#ffffff"};
     border-color: ${"#010203"};
-    box-shadow: 0 0 0 3px ${theme.palette.mode === 'dark' ? "#010203" : "#010203"};
+    box-shadow: 0px 2px 24px ${theme.palette.mode === 'dark' ? "#ffff" : "#ffff"};
   }
   }
 `,

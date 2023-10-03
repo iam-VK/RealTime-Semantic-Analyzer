@@ -1,4 +1,5 @@
 import LinearProgress from '@mui/joy/LinearProgress';
+import Typography from '@mui/joy/Typography';
 import "./progress_bar.css"
 import { useState, useEffect } from 'react';
 
@@ -39,23 +40,46 @@ function ProgressBar({ inputValue })
 {
     const { data, keysArray, valuesArray } = API({ user_input: inputValue });
 
+    valuesArray.map((key, index) =>
+    (
+        key == 0 ? keysArray.splice(index, 1) && valuesArray.splice(index, 1) : null
+    )
+    );
+
     return (
         <>
             {inputValue && inputValue.trim() !== '' && (
-                <>
+                <div className='box'>
                     {keysArray.map((key, index) => (
                         <div className='progress_box' key={key}>
                             <h3 className='bar'>{key}</h3>
                             <LinearProgress
                                 color="primary"
                                 determinate
-                                size="sm"
+                                size="lg"
                                 value={valuesArray[index]}
+                                thickness={20}
                                 variant="soft"
-                            />
+                                sx={{
+                                    backgroundColor: '#121212'
+                                }}>
+
+                                <Typography
+                                    level="body"
+                                    fontWeight="bold"
+                                    textColor="common"
+                                    sx={{
+                                        mixBlendMode: 'difference',
+                                        fontSize: "15px"
+                                    }}
+                                >
+                                    {valuesArray[index]} %
+                                </Typography>
+
+                            </LinearProgress>
                         </div>
                     ))}
-                </>
+                </div>
             )}
         </>
     );
