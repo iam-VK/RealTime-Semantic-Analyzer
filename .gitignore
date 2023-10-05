@@ -1,6 +1,7 @@
 venv
 __pycache__
 roberta-base-go_emotions
+twitter-roberta-base-sentiment-latest
 .vscode
 
 #Vite

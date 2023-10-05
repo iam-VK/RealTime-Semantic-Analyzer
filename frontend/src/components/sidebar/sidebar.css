@@ -2,43 +2,31 @@
 .Sidebar {
     width: 180px;
     background: rgba(255, 255, 255, 0.2);
-    /* Transparent with background blur */
     backdrop-filter: blur(10px);
-    /* Background blur effect */
     border-radius: 20px;
-    /* Rounded corners */
     padding: 20px;
-    /* Add padding for content inside the sidebar */
     display: flex;
     flex-direction: column;
     align-items: center;
-    /* Center content vertically */
     position: fixed;
-    /* Fixed position on the left side */
     top: 50%;
-    /* Center vertically */
     left: 0;
-    /* Stick to the left side */
     transform: translateY(-50%);
-    /* Adjust for vertical centering */
     margin-left: 50px;
 }
 
-/* Style for the sidebar content */
 .sidebar-content {
     display: flex;
     flex-direction: column;
     align-items: center;
 }
 
-/* Style for the sidebar header */
 .sidebar-header {
     display: flex;
     align-items: center;
     margin-bottom: 20px;
 }
 
-/* Style for the sidebar options */
 .sidebar-options {
     list-style-type: none;
     padding: 0;
@@ -53,5 +41,4 @@
 
 .sidebar-options li:hover {
     color: #007FFF;
-    /* Change color on hover */
 }

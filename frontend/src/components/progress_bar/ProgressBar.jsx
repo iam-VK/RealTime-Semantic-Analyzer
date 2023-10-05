@@ -3,9 +3,9 @@ import Typography from '@mui/joy/Typography';
 import "./progress_bar.css"
 import { useState, useEffect } from 'react';
 
-function API({ user_input })
+function API(user_input, path)
 {
-    const URL = 'http://localhost:5000/classify/' + user_input;
+    const URL = 'http://localhost:5000/' + path + user_input;
 
     const [data, setData] = useState(new Map());
     const [keysArray, setKeys] = useState([]);
@@ -30,15 +30,15 @@ function API({ user_input })
         };
 
         fetchData();
-    }, [user_input]);
+    }, [user_input],[path]);
 
     return { data, keysArray, valuesArray };
 }
 
 
-function ProgressBar({ inputValue })
+function ProgressBar({ inputValue, path })
 {
-    const { data, keysArray, valuesArray } = API({ user_input: inputValue });
+    const { data, keysArray, valuesArray } = API(inputValue,path);
 
     valuesArray.map((key, index) =>
     (

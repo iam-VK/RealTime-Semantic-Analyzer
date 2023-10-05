@@ -1,22 +1,19 @@
-import { useState } from 'react'
+import { BrowserRouter, Routes, Route } from "react-router-dom";
 import './App.css'
-import Header from "./components/header/Header.jsx"
-import Body from "./components/body/Body.jsx"
-import SideBar from './components/sidebar/SideBar'
+import MainPage from './pages/mainpage/MainPage.jsx';
+import SC_Page from './pages/sc_page/SC_Page';
 
 function App()
 {
   return (
-    <div>
-      <div className="sidebar">
-        <SideBar />
-      </div>
-      <div className="appcontent">
-        <Header />
-        <Body />
-      </div>
-    </div>
-  )
+    <BrowserRouter>
+      <Routes>
+        <Route path="/" element={<MainPage />} />
+        <Route path="/classify-emotion" element={<MainPage />} />
+        <Route path="/classify-sentence" element={<SC_Page />} />
+      </Routes>
+    </BrowserRouter>
+  );
 }
 
 export default App

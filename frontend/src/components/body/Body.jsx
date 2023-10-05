@@ -4,7 +4,7 @@ import "./body.css"
 import ProgressBar from '../progress_bar/ProgressBar.jsx';
 import React from 'react';
 
-function Body()
+function Body({ path })
 {
   const [inputValue, setInputValue] = React.useState('');
   const handleInputChange = (event) =>
@@ -23,7 +23,7 @@ function Body()
         />
       </div>
       <br />
-      <ProgressBar inputValue={inputValue} />
+      <ProgressBar inputValue={inputValue} path={path} />
     </>
   )
 }
@@ -68,7 +68,7 @@ const TextareaAutosize = styled(BaseTextareaAutosize)(
   transition: box-shadow 0.2s;
 
   &:hover {
-    border-color: ${blue[400]};
+    border-color: #ffa500};
   }
 
   &:focus {
