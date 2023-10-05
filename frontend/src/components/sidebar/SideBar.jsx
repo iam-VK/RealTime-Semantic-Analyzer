@@ -13,8 +13,8 @@ function SideBar()
                     <h3>Home</h3>
                 </div>
                 <ul className="sidebar-options">
-                    <li>Classify</li>
-                    <li>Corrector</li>
+                    <li>Analyze Emotion</li>
+                    <li>Sentence Classification</li>
                     <li>About</li>
                 </ul>
             </div>

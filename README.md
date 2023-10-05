@@ -27,12 +27,17 @@ In this project, we leverage the power of modern NLP technology to create a dyna
 5. **Online Hosting:**
    - The web application is hosted online, ensuring accessibility to users from anywhere with an internet connection.
 
+---
+
 ## Installation
 
 **Pre-requisites**
    > - python3 
    > - pip
    > - python venv (virtual environment support)
+   
+   > - NodeJs
+   > - npm
 
 **Clone the repo**
 
@@ -50,10 +55,4 @@ sudo ./setup.sh
 **Run the setup script**
 ```bash
 sudo ./run.sh 
-```
-**Front-end Web page**
-
-The Front-end is not hosted currently so as of now the html file has to be manually be opened from the path using browser.
-````
- /frontend/index.html 
-````
+```   
