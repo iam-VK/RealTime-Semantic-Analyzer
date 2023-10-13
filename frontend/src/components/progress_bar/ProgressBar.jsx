@@ -30,7 +30,7 @@ function API(user_input, path)
         };
 
         fetchData();
-    }, [user_input],[path]);
+    }, [user_input], [path]);
 
     return { data, keysArray, valuesArray };
 }
@@ -38,7 +38,7 @@ function API(user_input, path)
 
 function ProgressBar({ inputValue, path })
 {
-    const { data, keysArray, valuesArray } = API(inputValue,path);
+    const { data, keysArray, valuesArray } = API(inputValue, path);
 
     valuesArray.map((key, index) =>
     (
